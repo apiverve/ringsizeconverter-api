@@ -1,46 +1,42 @@
 openapi: 3.0.4
 info:
   title: Ring Size Converter
-  description: Ring Size Converter is a tool for converting ring sizes between US, UK, EU, JP, CH, and AU standards. It can also convert from diameter measurements in millimeters.
+  description: >-
+    Ring Size Converter is a tool for converting ring sizes between US, UK, EU,
+    JP, CH, and AU standards. It can also convert from diameter measurements in
+    millimeters.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/ringsizeconverter:
     get:
-      summary: Convert Ring Size
-      description: Ring Size Converter is a tool for converting ring sizes between US, UK, EU, JP, CH, and AU standards. It can also convert from diameter measurements in millimeters.
+      summary: Convert by Ring Size
+      description: Convert ring size between international standards
       operationId: ringsizeconverter
       parameters:
-      - name: size
-        in: query
-        schema:
-          type: string
-        required: false
-        description: The ring size to convert (provide either size or measurement)
-        example: '7'
-      - name: from
-        in: query
-        schema:
-          type: string
-        required: false
-        description: 'Source region: us, uk, eu, jp, ch (china), or au (required with size)'
-        example: us
-      - name: measurement
-        in: query
-        schema:
-          type: string
-        required: false
-        description: Ring diameter in millimeters (provide either size or measurement)
-        example: '17.3'
+        - name: size
+          in: query
+          schema:
+            type: string
+          required: true
+          description: The ring size to convert
+          example: '7'
+        - name: from
+          in: query
+          schema:
+            type: string
+          required: true
+          description: Source region
+          example: us
       responses:
         '200':
           description: Successful Response
@@ -56,11 +52,11 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
                   input_diameter_mm: 17.3
                   circumference_mm: 54.3
@@ -68,18 +64,18 @@ paths:
                     diameter_mm: 17.3
                     circumference_mm: 54.3
                     us: 7
-                    uk: N
+                    uk: 'N'
                     eu: 52
                     jp: 17
                     ch: -22
-                    au: N
+                    au: 'N'
                   note: Sizes are approximate. For accurate sizing, visit a jeweler.
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -87,4 +83,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
