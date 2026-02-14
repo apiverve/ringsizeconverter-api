@@ -16,8 +16,7 @@ const api = new ringsizeconverterAPI({
 // Example query
 var query = {
   size: "7",
-  from: "us",
-  measurement: "17.3"
+  from: "us"
 };
 
 // Make the API request using callback
