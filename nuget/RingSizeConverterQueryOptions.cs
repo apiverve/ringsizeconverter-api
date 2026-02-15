@@ -11,24 +11,15 @@ namespace APIVerve.API.RingSizeConverter
     public class RingSizeConverterQueryOptions
     {
         /// <summary>
-        /// The ring size to convert (provide either size or measurement)
-        /// Example: 7
+        /// The ring size to convert
         /// </summary>
         [JsonProperty("size")]
         public string Size { get; set; }
 
         /// <summary>
-        /// Source region: us, uk, eu, jp, ch (china), or au (required with size)
-        /// Example: us
+        /// Source region
         /// </summary>
         [JsonProperty("from")]
         public string From { get; set; }
-
-        /// <summary>
-        /// Ring diameter in millimeters (provide either size or measurement)
-        /// Example: 17.3
-        /// </summary>
-        [JsonProperty("measurement")]
-        public string Measurement { get; set; }
     }
 }
