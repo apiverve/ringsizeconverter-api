@@ -1,1 +1,3 @@
-from .apiClient import RingsizeconverterAPIClient
+from .apiClient import RingsizeconverterAPIClient, RingsizeconverterAPIClientError
+
+__all__ = ['RingsizeconverterAPIClient', 'RingsizeconverterAPIClientError']
