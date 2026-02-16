@@ -44,7 +44,10 @@ from apiverve_ringsizeconverter.apiClient import RingsizeconverterAPIClient
 # Initialize the client with your APIVerve API key
 api = RingsizeconverterAPIClient("[YOUR_API_KEY]")
 
-query = { "size": "7", "from": "us" }
+query = {
+    "size": "7",
+    "from": "us"
+}
 
 try:
     # Make the API call
@@ -82,7 +85,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "size": "7", "from": "us" }
+query = {
+    "size": "7",
+    "from": "us"
+}
 ```
 
 ###### Simple Request
@@ -132,7 +138,10 @@ from apiverve_ringsizeconverter.apiClient import RingsizeconverterAPIClient, Rin
 
 api = RingsizeconverterAPIClient("[YOUR_API_KEY]")
 
-query = { "size": "7", "from": "us" }
+query = {
+    "size": "7",
+    "from": "us"
+}
 
 try:
     result = api.execute(query)
@@ -153,7 +162,10 @@ from apiverve_ringsizeconverter.apiClient import RingsizeconverterAPIClient, Rin
 
 api = RingsizeconverterAPIClient("[YOUR_API_KEY]")
 
-query = { "size": "7", "from": "us" }
+query = {
+    "size": "7",
+    "from": "us"
+}
 
 try:
     result = api.execute(query)
@@ -187,7 +199,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_ringsizeconverter.apiClient import RingsizeconverterAPIClient, RingsizeconverterAPIClientError
 
-query = { "size": "7", "from": "us" }
+query = {
+    "size": "7",
+    "from": "us"
+}
 
 # Using context manager ensures proper cleanup
 with RingsizeconverterAPIClient("[YOUR_API_KEY]") as api:
@@ -213,7 +228,10 @@ from apiverve_ringsizeconverter.apiClient import RingsizeconverterAPIClient
 # Enable debug mode
 api = RingsizeconverterAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "size": "7", "from": "us" }
+query = {
+    "size": "7",
+    "from": "us"
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -228,8 +246,12 @@ from apiverve_ringsizeconverter.apiClient import RingsizeconverterAPIClient
 
 api = RingsizeconverterAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "size": "7",
+    "from": "us"
+}
+
 try:
-    query = { "size": "7", "from": "us" }
     result = api.execute(query)
     print(result)
 finally:
