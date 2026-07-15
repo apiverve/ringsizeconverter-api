@@ -17,11 +17,14 @@ def call_ringsizeconverter_api():
     Make a GET request to the Ring Size Converter API
     """
     try:
+        # Query parameters
+        params &#x3D; {&#x27;size&#x27;: &#x27;7&#x27;, &#x27;from&#x27;: &#x27;us&#x27;}
+
         headers = {
             'x-api-key': API_KEY
         }
 
-        response = requests.get(API_URL, headers=headers)
+        response = requests.get(API_URL, headers=headers, params=params)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
