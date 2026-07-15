@@ -13,7 +13,13 @@ const API_URL = 'https://api.apiverve.com/v1/ringsizeconverter';
  */
 async function callRingSizeConverterAPI() {
   try {
-    const response = await fetch(API_URL, {
+    // Query parameters
+    const params &#x3D; new URLSearchParams({
+            size: &#x27;7&#x27;,
+            from: &#x27;us&#x27;
+        });
+
+    const response = await fetch(`${API_URL}?${params}`, {
       method: 'GET',
       headers: {
         'x-api-key': API_KEY
