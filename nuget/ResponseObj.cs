@@ -25,15 +25,18 @@ namespace APIVerve.API.RingSizeConverter
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("input_diameter_mm")]
-        public double InputDiameterMm { get; set; }
+        public double? InputDiameterMm { get; set; }
 
         [JsonProperty("circumference_mm")]
-        public double CircumferenceMm { get; set; }
+        public double? CircumferenceMm { get; set; }
 
         [JsonProperty("conversions")]
         public Conversions Conversions { get; set; }
@@ -45,27 +48,39 @@ namespace APIVerve.API.RingSizeConverter
     public partial class Conversions
     {
         [JsonProperty("diameter_mm")]
-        public double DiameterMm { get; set; }
+        public double? DiameterMm { get; set; }
 
         [JsonProperty("circumference_mm")]
-        public double CircumferenceMm { get; set; }
+        public double? CircumferenceMm { get; set; }
 
         [JsonProperty("us")]
-        public long Us { get; set; }
+        public long? Us { get; set; }
 
         [JsonProperty("uk")]
         public string Uk { get; set; }
 
         [JsonProperty("eu")]
-        public long Eu { get; set; }
+        public long? Eu { get; set; }
 
         [JsonProperty("jp")]
-        public long Jp { get; set; }
+        public long? Jp { get; set; }
 
         [JsonProperty("ch")]
-        public long Ch { get; set; }
+        public long? Ch { get; set; }
 
         [JsonProperty("au")]
         public string Au { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
