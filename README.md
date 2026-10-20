@@ -1,13 +1,13 @@
-# [Ring Size Converter API](https://apiverve.com/marketplace/ringsizeconverter?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Ring Size Converter API](https://apiverve.com/marketplace/ringsizeconverter?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Ring Size Converter is a tool for converting ring sizes between US, UK, EU, JP, CH, and AU standards. It can also convert from diameter measurements in millimeters.
+Ring Size Converter translates international ring sizes or millimeter diameters into US and UK standards, inside diameter, and circumference. Paid plans add equivalent sizes for Europe, Japan, Switzerland, and Australia.
 
 The Ring Size Converter API provides a simple, reliable way to integrate ring size converter functionality into your applications. Built for developers who need production-ready ring size converter capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/ringsizeconverter?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/ringsizeconverter?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/ringsizeconverter?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/ringsizeconverter?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -162,7 +162,7 @@ go get github.com/apiverve/ringsizeconverter-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Ring Size Converter API](https://apiverve.com/marketplace/ringsizeconverter?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Ring Size Converter API](https://apiverve.com/marketplace/ringsizeconverter?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/ringsizeconverter](https://docs.apiverve.com/ref/ringsizeconverter)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -192,11 +192,40 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Ring Size Converter API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "input_diameter_mm": 17.3,
+    "circumference_mm": 54.3,
+    "conversions": {
+      "diameter_mm": 17.3,
+      "circumference_mm": 54.3,
+      "us": 7,
+      "uk": "N",
+      "eu": 52,
+      "jp": 17,
+      "ch": -22,
+      "au": "N"
+    },
+    "note": "Sizes are approximate. For accurate sizing, visit a jeweler."
+  }
 }
 ```
 
@@ -204,7 +233,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Ring Size Converter API](https://apiverve.com/marketplace/ringsizeconverter?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Ring Size Converter API](https://apiverve.com/marketplace/ringsizeconverter?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)

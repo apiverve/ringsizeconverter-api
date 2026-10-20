@@ -2,9 +2,9 @@ openapi: 3.0.4
 info:
   title: Ring Size Converter
   description: >-
-    Ring Size Converter is a tool for converting ring sizes between US, UK, EU,
-    JP, CH, and AU standards. It can also convert from diameter measurements in
-    millimeters.
+    Ring Size Converter translates international ring sizes or millimeter
+    diameters into US and UK standards, inside diameter, and circumference. Paid
+    plans add equivalent sizes for Europe, Japan, Switzerland, and Australia.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -19,7 +19,7 @@ servers:
 paths:
   /v1/ringsizeconverter:
     get:
-      summary: Convert by Ring Size
+      summary: Ring Size Converter
       description: Convert ring size between international standards
       operationId: ringsizeconverter
       parameters:
