@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/ringsizeconverter",
-  "version": "1.2.0",
-  "description": "Ring Size Converter is a tool for converting ring sizes between US, UK, EU, JP, CH, and AU standards. It can also convert from diameter measurements in millimeters.",
+  "version": "1.2.2",
+  "description": "Ring Size Converter translates international ring sizes or millimeter diameters into US and UK standards, inside diameter, and circumference. Paid plans add equivalent sizes for Europe, Japan, Switzerland, and Australia.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/ringsizeconverter-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/ringsizeconverter?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/ringsizeconverter?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
